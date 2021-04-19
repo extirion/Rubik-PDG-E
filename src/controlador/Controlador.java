@@ -150,28 +150,37 @@ public class Controlador {
         if (tipo == false) {
             if (pnlHorizontal == quePanel) {
                 rubik.horizontal(disco);
+                rubik.set_ultimo_movimiento("H"+disco);
             } else if (pnlVertical == quePanel) {
                 rubik.vertical(disco);
+                rubik.set_ultimo_movimiento("V"+disco);
             } else {
                 if (disco == 0) {
                     rubik.transversal(1);
+                    rubik.set_ultimo_movimiento("T1");
                 } else {
                     rubik.transversal(0);
+                    rubik.set_ultimo_movimiento("T0");
                 }
             }
         }else{
             if (pnlHorizontal == quePanel) {
                 rubik.horizontal_negativo(disco);
+                rubik.set_ultimo_movimiento(disco+"H");
             } else if (pnlVertical == quePanel) {
                 rubik.vertical_negativo(disco);
+                rubik.set_ultimo_movimiento(disco+"V");
             } else {
                 if (disco == 0) {
                     rubik.transversal_negativo(1);
+                    rubik.set_ultimo_movimiento("1T");
                 } else {
                     rubik.transversal_negativo(0);
+                    rubik.set_ultimo_movimiento("0T");
                 }
             }
         }
+        System.out.println("el ultimo movimienot fue " + rubik.get_ultimo_movimiento());
         this.visualizar(this.rubik);
     }
 

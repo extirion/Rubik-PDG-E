@@ -53,7 +53,7 @@ public class PanelBotones extends JPanel implements ActionListener
     { if (e.getSource().equals(btnDisco0))  
     	  ctrlControlador.movimiento( this, 0, false );
       else
-  	  ctrlControlador.movimiento( this, 1,false );
+  	  ctrlControlador.movimiento( this, 1, false );
     }
 
 }

@@ -26,8 +26,10 @@ public class Rubik implements Serializable, Cloneable {
     // Atributos
     /**
      * Contenedor de 8 cubos basicos.
+     * Cadena de carcteres que almacena el ultimo movimiento que se realizo sobre el cubo
      */
     private Cube ernoRubik[][][];
+    private String ultimo_movimiento;
 
     // Constructores
     /**
@@ -35,6 +37,7 @@ public class Rubik implements Serializable, Cloneable {
      * <b>post: </b> Crea un cubo de Erno Rubik.
      */
     public Rubik() {
+        ultimo_movimiento = "";
         ernoRubik = new Cube[2][2][2];
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
@@ -45,6 +48,16 @@ public class Rubik implements Serializable, Cloneable {
         }
     }
 
+    //retorna el valor del ultimo movimiento realizado en el cubo rubik
+    public String get_ultimo_movimiento(){
+        return ultimo_movimiento;
+    }
+    
+    //Almacena el ultimo movimiento realziado en el cubo rubik
+    public void set_ultimo_movimiento(String ultimo_movimiento){
+        this.ultimo_movimiento = ultimo_movimiento;
+    }
+    
     private Cube[][][] getErnoRubik() {
         return ernoRubik;
     }
